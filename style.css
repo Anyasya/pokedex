@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital@1&family=Roboto&family=Source+Sans+Pro&display=swap&subset=cyrillic-ext');
+
+*{
+    max-width: 1480px;
+/*    max-width-container:1125px*/
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.header-content{
+    margin: auto;
+    padding: 0 20px;
+}
