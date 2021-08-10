@@ -13,7 +13,6 @@ body{
     padding: 0;
     margin: 0;
     min-height: 100%;
-    overflow: auto
 }
 root {
     --max-width: 1480px;
@@ -67,7 +66,6 @@ root {
 .menu-list{
     display: flex;
     flex-wrap: wrap;
-
     font-family: 'Nunito', sans-serif;
 
 
@@ -120,7 +118,7 @@ root {
 }
 
 .main-page-content{
-    height: 60vh;
+    /*height: 60vh;*/
     margin-left: 8vw;
     display: flex;
     flex-direction: column;
@@ -257,13 +255,15 @@ root {
         align-content: center;
         justify-content: flex-end;
         align-items: center;
+        height: -webkit-fill-available;
+        height: 100%;
+        height: -moz-available;          /* WebKit-based browsers will ignore this. */
+        height: fill-available;
     }
     .header-column:nth-child(1){
         padding-left: 1em;
     }
-    .menu-list li{
-        margin-bottom: 0.8em;
-    }
+
     .menu-list li a{
         font-family: 'Roboto', sans-serif;
         font-size: 25px;
@@ -335,7 +335,7 @@ root {
     }
     /* main-content   */
     .page-container{
-        height: 70vh;
+        /*height: 70vh;*/
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -389,7 +389,7 @@ root {
        justify-content: flex-start;
    }
    .main-p-first, .main-p-second{
-       margin-bottom: 40px;
+       /*margin-bottom: 40px;*/
    }
     .footer-span-second{
         font-weight: bold;
@@ -399,5 +399,22 @@ root {
     }
     .show-pokemon{
         width: 20em;
+    }
+    /*.main-content{*/
+    /*    flex: auto;*/
+    /*}*/
+    .footer{
+        text-align: center;
+        margin: 0;
+        width: 100%;
+
+    }
+    .footer-span-first{
+        font-size: small;
+    }
+    .page{
+        flex: none;
+
+
     }
 }
