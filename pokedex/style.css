@@ -1,38 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Roboto&family=Source+Sans+Pro&display=swap&subset=cyrillic-ext');
 
-html {
+
+body, html{
+    font-family: 'Roboto', sans-serif;
     height: 100%;
     margin: 0;
     padding: 0;
     overflow: hidden;
+
 }
 
-body{
-    font-family: 'Roboto', sans-serif;
-    /*position:absolute; top:0; bottom:0; right:0; left:0;*/
-    padding: 0;
+*{
     margin: 0;
-    min-height: 100%;
-    overflow: auto
+    padding: 0;
 }
-root {
-    --max-width: 1480px;
-}
+
 
 .wrapper {
-    min-height: 100vh;
-    background: #F6F7F9;
+    /*min-height: 100vh;*/
+    min-height: 100%;
+    background: linear-gradient(#F5DB13, #F2B807);
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: space-between;
     display: flex;
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+
 }
-*{
-    /*max-width: 1480px;*/
-    /*    max-width-container:1125px*/
-    margin: 0;
-    padding: 0;
-}
+
 
 
 /*HEADER-HEADER-HEADER-HEADER-HEADER-HEADER-HEADER-HEADER-HEADER-HEADER-HEADER-HEADER-HEADER-HEADER-HEADER-HEADER-HEADER-HEADER-*/
@@ -54,20 +49,19 @@ root {
     z-index: 5;
 }
 
-.header-column:nth-child(1){
+.header__column:nth-child(1){
     align-self: flex-start;
     padding-left: 5em;
     width: 20%;
     padding-right: 1em;
 }
-.header-column:nth-child(2){
+.header__column:nth-child(2){
     width: 80%;
 }
 
 .menu-list{
     display: flex;
     flex-wrap: wrap;
-
     font-family: 'Nunito', sans-serif;
 
 
@@ -94,13 +88,6 @@ root {
 
 
 }
-.page-container{
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
-}
 .footer{
     width: 80%;
     margin-left: 8%;
@@ -112,10 +99,20 @@ root {
     justify-content: space-between;
     flex-wrap: nowrap;
 }
+.shadow-page:after{
+    content: '';
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
 
 /*TABLET-TABLET-TABLET-TABLET-TABLET-TABLET-TABLET-TABLET-TABLET-TABLET-TABLET-TABLET-TABLET-TABLET-TABLET-TABLET-TABLET-TABLET-TABLET-TABLET-TABLET-*/
 @media (min-width: 768px) and (max-width: 1024px){
-    .header-column:nth-child(1){
+    .header__column:nth-child(1){
         padding-left: 1em;
     }
     .menu-list{
@@ -133,12 +130,16 @@ root {
     .menu-list li a{
         font-size: 19px;
     }
+    /* main-content   */
+
     .wrapper{
         justify-content: flex-start;
     }
 
 
 }
+
+
 
 /*MOBILE-MOBILE-MOBILE-MOBILE-MOBILE-MOBILE-MOBILE-MOBILE-MOBILE-MOBILE-MOBILE-MOBILE-MOBILE-MOBILE-MOBILE-MOBILE-MOBILE-MOBILE-MOBILE-MOBILE-MOBILE-MOBILE-*/
 @media (max-width: 767px) {
@@ -156,13 +157,15 @@ root {
         align-content: center;
         justify-content: flex-end;
         align-items: center;
+        height: -webkit-fill-available;
+        height: 100%;
+        height: -moz-available;          /* WebKit-based browsers will ignore this. */
+        height: fill-available;
     }
-    .header-column:nth-child(1){
+    .header__column:nth-child(1){
         padding-left: 1em;
     }
-    .menu-list li{
-        margin-bottom: 0.8em;
-    }
+
     .menu-list li a{
         font-family: 'Roboto', sans-serif;
         font-size: 25px;
@@ -205,7 +208,7 @@ root {
         transform: rotate(45deg);
         top: calc(50% - 3px);
     }
-    .header-body{
+    .header__body{
         display: none;
     }
     .header-body-show{
@@ -226,17 +229,52 @@ root {
         display: block;
         margin-bottom: 0.5em;
     }
-    .shadow-content {
+    .shadow-content{
         position: relative;
         z-index: 2;
         background: #212121;
+        opacity: 0.5;
+    }
+    /* main-content   */
+
     .wrapper{
+        height: calc(var(--vh, 1vh) * 100);
         justify-content: flex-start;
+        width: 100vw;
+        height: 100%;
+        /*min-height: 100vh;*/
+        box-sizing: border-box;
+
+
     }
     .footer-container{
         flex-direction: column-reverse;
+        padding: 0;
     }
+    .main-page-content{
+        justify-content: flex-start;
+    }
+
     .footer-span-second{
         font-weight: bold;
     }
+    .footer{
+        text-align: center;
+        margin: 0;
+        width: 100%;
+        margin-bottom: auto;
     }
+    .footer-span-first{
+        font-size: small;
+    }
+    .page{
+        flex: none;
+
+
+    }
+    .main-content{
+        /*flex: 1 0 auto;*/
+        flex: 1 1 auto;
+    }
+
+}

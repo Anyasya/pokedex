@@ -1,37 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Roboto&family=Source+Sans+Pro&display=swap&subset=cyrillic-ext');
 
-html {
+
+body, html{
+    font-family: 'Roboto', sans-serif;
     height: 100%;
     margin: 0;
     padding: 0;
     overflow: hidden;
+
 }
 
-body{
-    font-family: 'Roboto', sans-serif;
-    /*position:absolute; top:0; bottom:0; right:0; left:0;*/
-    padding: 0;
+*{
     margin: 0;
-    min-height: 100%;
+    padding: 0;
 }
-root {
-    --max-width: 1480px;
-}
+
+/*root {*/
+/*    --max-width: 1480px;*/
+/*}*/
 
 .wrapper {
-    min-height: 100vh;
+    /*min-height: 100vh;*/
+    min-height: 100%;
     background: linear-gradient(#F5DB13, #F2B807);
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: space-between;
     display: flex;
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+
 }
-*{
-    /*max-width: 1480px;*/
-/*    max-width-container:1125px*/
-    margin: 0;
-    padding: 0;
-}
+
 
 
 /*HEADER-HEADER-HEADER-HEADER-HEADER-HEADER-HEADER-HEADER-HEADER-HEADER-HEADER-HEADER-HEADER-HEADER-HEADER-HEADER-HEADER-HEADER-*/
@@ -368,7 +367,7 @@ root {
         width: 80%;
         display: block;
         margin:0 auto;
-        padding-top: 3em;
+        padding-top: 5em;
     }
     .main-page-content{
         margin-left: 0;
@@ -380,10 +379,18 @@ root {
 
     }
     .wrapper{
+        height: calc(var(--vh, 1vh) * 100);
         justify-content: flex-start;
+        width: 100vw;
+        height: 100%;
+        /*min-height: 100vh;*/
+        box-sizing: border-box;
+
+
     }
    .footer-container{
        flex-direction: column-reverse;
+       padding: 0;
    }
    .main-page-content{
        justify-content: flex-start;
@@ -407,7 +414,7 @@ root {
         text-align: center;
         margin: 0;
         width: 100%;
-
+        margin-bottom: auto;
     }
     .footer-span-first{
         font-size: small;
@@ -417,4 +424,9 @@ root {
 
 
     }
+    .main-content{
+        /*flex: 1 0 auto;*/
+        flex: 1 1 auto;
+    }
+
 }
